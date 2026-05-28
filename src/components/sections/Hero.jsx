@@ -1,5 +1,5 @@
 // src/components/sections/Hero.jsx
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Badge from '../ui/Badge'
 import Button from '../ui/Button'
 import { useReveal } from '../../hooks/useReveal'
@@ -36,7 +36,7 @@ function AnimatedCounter({ target, suffix, isVisible }) {
   }, [isVisible, target])
 
   return (
-    <span className="text-3xl sm:text-4xl font-black gradient-text tabular-nums">
+    <span className="text-3xl sm:text-4xl font-black text-[#059669] tabular-nums">
       {count}
       {suffix}
     </span>
@@ -48,33 +48,25 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
-      {/* Grid background */}
-      <div className="absolute inset-0 hero-grid" />
-
-      {/* Orbs */}
-      <div className="orb orb-blue w-[600px] h-[600px] -top-40 -left-40" />
-      <div className="orb orb-cyan w-[500px] h-[500px] top-1/3 -right-32" />
-      <div className="orb orb-blue w-[400px] h-[400px] bottom-0 left-1/3" />
-
       <div ref={ref} className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         {/* Badge */}
-        <div className={`reveal ${isVisible ? 'visible' : ''} mb-8`}>
+        <div className={`reveal ${isVisible ? 'visible' : ''} mb-10`}>
           <Badge>Agencia de Software · Bolivia</Badge>
         </div>
 
         {/* Title */}
         <h1
-          className={`reveal ${isVisible ? 'visible' : ''} text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.08] tracking-tight text-white mb-6`}
+          className={`reveal ${isVisible ? 'visible' : ''} text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.08] tracking-tight text-[#1E293B] mb-8`}
           style={{ transitionDelay: '100ms' }}
         >
           Desarrollo de Software{' '}
-          <span className="gradient-text">a Medida</span> para Escalar tu
+          <span className="text-[#059669]">a Medida</span> para Escalar tu
           Negocio.
         </h1>
 
         {/* Subtitle */}
         <p
-          className={`reveal ${isVisible ? 'visible' : ''} mx-auto max-w-2xl text-base sm:text-lg text-white/50 leading-relaxed mb-10`}
+          className={`reveal ${isVisible ? 'visible' : ''} mx-auto max-w-2xl text-base sm:text-lg text-[#64748B] font-normal leading-relaxed mb-14`}
           style={{ transitionDelay: '200ms' }}
         >
           En Arbit Tech construimos CRMs, ERPs, Landing Pages y Aplicaciones
@@ -84,7 +76,7 @@ export default function Hero() {
 
         {/* CTAs */}
         <div
-          className={`reveal ${isVisible ? 'visible' : ''} flex flex-col sm:flex-row items-center justify-center gap-4 mb-20`}
+          className={`reveal ${isVisible ? 'visible' : ''} flex flex-col sm:flex-row items-center justify-center gap-4 mb-24`}
           style={{ transitionDelay: '300ms' }}
         >
           <Button href="#contacto" variant="primary" icon>
@@ -97,7 +89,7 @@ export default function Hero() {
 
         {/* Stats */}
         <div
-          className={`reveal ${isVisible ? 'visible' : ''} grid grid-cols-3 gap-6 sm:gap-12 border-t border-white/[0.08] pt-10`}
+          className={`reveal ${isVisible ? 'visible' : ''} grid grid-cols-3 gap-6 sm:gap-12 border-t border-[#E2E8F0] pt-12`}
           style={{ transitionDelay: '400ms' }}
         >
           {stats.map((stat) => (
@@ -107,7 +99,7 @@ export default function Hero() {
                 suffix={stat.suffix}
                 isVisible={isVisible}
               />
-              <span className="text-xs sm:text-sm text-white/40 font-medium">
+              <span className="text-xs sm:text-sm text-[#94A3B8] font-medium">
                 {stat.label}
               </span>
             </div>

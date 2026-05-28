@@ -52,31 +52,27 @@ export default function Contact() {
   }
 
   const inputClasses =
-    'w-full rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-all duration-300 focus:border-[#0066FF]/50 focus:bg-white/[0.05] focus:ring-1 focus:ring-[#0066FF]/30'
+    'w-full rounded-xl bg-[#F8FAFC] px-4 py-3.5 text-sm text-[#1E293B] placeholder-[#94A3B8] outline-none transition-all duration-300 focus:bg-white focus:ring-2 focus:ring-[#059669]/20 focus:shadow-[0_0_0_1px_#059669]'
 
   return (
-    <section id="contacto" className="relative py-28 sm:py-36">
-      {/* Orb decoration */}
-      <div className="orb orb-blue w-[500px] h-[500px] bottom-0 -left-40" />
-      <div className="orb orb-cyan w-[300px] h-[300px] top-20 -right-20" />
-
+    <section id="contacto" className="relative py-32 sm:py-40">
       <div ref={ref} className="relative z-10 mx-auto max-w-3xl px-6">
         {/* Section header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <p
-            className={`reveal ${isVisible ? 'visible' : ''} text-sm font-semibold uppercase tracking-widest text-[#00D4FF]/70 mb-3`}
+            className={`reveal ${isVisible ? 'visible' : ''} text-sm font-semibold uppercase tracking-widest text-[#059669] mb-4`}
           >
             Contacto
           </p>
           <h2
-            className={`reveal ${isVisible ? 'visible' : ''} text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight`}
+            className={`reveal ${isVisible ? 'visible' : ''} text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1E293B] tracking-tight`}
             style={{ transitionDelay: '100ms' }}
           >
             Hagamos{' '}
-            <span className="gradient-text">realidad</span> tu proyecto
+            <span className="text-[#059669]">realidad</span> tu proyecto
           </h2>
           <p
-            className={`reveal ${isVisible ? 'visible' : ''} mt-4 mx-auto max-w-xl text-white/40 text-sm sm:text-base`}
+            className={`reveal ${isVisible ? 'visible' : ''} mt-5 mx-auto max-w-xl text-[#64748B] text-sm sm:text-base font-normal`}
             style={{ transitionDelay: '150ms' }}
           >
             Contanos tu idea y te mostramos cómo podemos transformarla en una
@@ -86,19 +82,19 @@ export default function Contact() {
 
         {/* Form card */}
         <div
-          className={`reveal ${isVisible ? 'visible' : ''} rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 sm:p-10`}
+          className={`reveal ${isVisible ? 'visible' : ''} bg-white border border-slate-100 rounded-xl shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-slate-200 p-8 sm:p-12`}
           style={{ transitionDelay: '250ms' }}
         >
           {submitted ? (
             /* Success state */
-            <div className="flex flex-col items-center justify-center py-12 text-center">
-              <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/10">
-                <CheckCircle className="w-8 h-8 text-emerald-400" />
+            <div className="flex flex-col items-center justify-center py-16 text-center">
+              <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-full bg-[#F0FDF4]">
+                <CheckCircle className="w-8 h-8 text-[#059669]" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-[#1E293B] mb-2">
                 ¡Mensaje enviado!
               </h3>
-              <p className="text-sm text-white/40 max-w-sm">
+              <p className="text-sm text-[#64748B] max-w-sm">
                 Gracias por contactarnos. Nos pondremos en contacto contigo en
                 las próximas 24 horas.
               </p>
@@ -107,17 +103,17 @@ export default function Contact() {
                   setSubmitted(false)
                   setForm({ name: '', company: '', projectType: '', message: '' })
                 }}
-                className="mt-6 text-sm text-[#00D4FF] hover:text-white transition-colors cursor-pointer"
+                className="mt-8 text-sm text-[#059669] hover:text-[#10B981] font-semibold transition-colors cursor-pointer"
               >
                 Enviar otro mensaje
               </button>
             </div>
           ) : (
             /* Form */
-            <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-xs font-semibold text-white/50 mb-2 uppercase tracking-wide">
+                <label htmlFor="name" className="block text-xs font-semibold text-[#475569] mb-2 uppercase tracking-wide">
                   Nombre *
                 </label>
                 <input
@@ -126,17 +122,17 @@ export default function Contact() {
                   placeholder="Tu nombre completo"
                   value={form.name}
                   onChange={handleChange('name')}
-                  className={`${inputClasses} ${errors.name ? 'border-red-500/50' : ''}`}
+                  className={`${inputClasses} ${errors.name ? 'ring-2 ring-red-400/30 shadow-[0_0_0_1px_#ef4444]' : ''}`}
                 />
                 {errors.name && (
-                  <p className="mt-1 text-xs text-red-400">{errors.name}</p>
+                  <p className="mt-1.5 text-xs text-red-500">{errors.name}</p>
                 )}
               </div>
 
               {/* Company */}
               <div>
-                <label htmlFor="company" className="block text-xs font-semibold text-white/50 mb-2 uppercase tracking-wide">
-                  Empresa <span className="text-white/30">(opcional)</span>
+                <label htmlFor="company" className="block text-xs font-semibold text-[#475569] mb-2 uppercase tracking-wide">
+                  Empresa <span className="text-[#94A3B8]">(opcional)</span>
                 </label>
                 <input
                   id="company"
@@ -150,32 +146,32 @@ export default function Contact() {
 
               {/* Project Type */}
               <div>
-                <label htmlFor="projectType" className="block text-xs font-semibold text-white/50 mb-2 uppercase tracking-wide">
+                <label htmlFor="projectType" className="block text-xs font-semibold text-[#475569] mb-2 uppercase tracking-wide">
                   Tipo de Proyecto *
                 </label>
                 <select
                   id="projectType"
                   value={form.projectType}
                   onChange={handleChange('projectType')}
-                  className={`${inputClasses} ${!form.projectType ? 'text-white/30' : ''} ${errors.projectType ? 'border-red-500/50' : ''}`}
+                  className={`${inputClasses} ${!form.projectType ? 'text-[#94A3B8]' : ''} ${errors.projectType ? 'ring-2 ring-red-400/30 shadow-[0_0_0_1px_#ef4444]' : ''}`}
                 >
                   <option value="" disabled>
                     Seleccioná una opción
                   </option>
                   {projectTypes.map((type) => (
-                    <option key={type} value={type} className="bg-[#0a1628] text-white">
+                    <option key={type} value={type} className="bg-white text-[#1E293B]">
                       {type}
                     </option>
                   ))}
                 </select>
                 {errors.projectType && (
-                  <p className="mt-1 text-xs text-red-400">{errors.projectType}</p>
+                  <p className="mt-1.5 text-xs text-red-500">{errors.projectType}</p>
                 )}
               </div>
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-xs font-semibold text-white/50 mb-2 uppercase tracking-wide">
+                <label htmlFor="message" className="block text-xs font-semibold text-[#475569] mb-2 uppercase tracking-wide">
                   Mensaje *
                 </label>
                 <textarea
@@ -184,15 +180,15 @@ export default function Contact() {
                   placeholder="Describí brevemente tu proyecto o idea..."
                   value={form.message}
                   onChange={handleChange('message')}
-                  className={`${inputClasses} resize-none ${errors.message ? 'border-red-500/50' : ''}`}
+                  className={`${inputClasses} resize-none ${errors.message ? 'ring-2 ring-red-400/30 shadow-[0_0_0_1px_#ef4444]' : ''}`}
                 />
                 {errors.message && (
-                  <p className="mt-1 text-xs text-red-400">{errors.message}</p>
+                  <p className="mt-1.5 text-xs text-red-500">{errors.message}</p>
                 )}
               </div>
 
               {/* Submit */}
-              <Button type="submit" variant="primary" className="w-full mt-2">
+              <Button type="submit" variant="primary" className="w-full mt-3">
                 <Send className="w-4 h-4" />
                 Enviar Mensaje
               </Button>

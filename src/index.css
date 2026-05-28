@@ -1,113 +1,65 @@
 /* src/index.css */
 @import "tailwindcss";
 
-/* ── Custom scrollbar ── */
+/* ── Custom scrollbar — subtle green accent ── */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #050A14;
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #0066FF, #00D4FF);
-  border-radius: 4px;
+  background: #059669;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #0077FF, #00E5FF);
+  background: #10B981;
 }
 
 /* ── Base styles ── */
 html {
   scroll-behavior: smooth;
-  scrollbar-color: #0066FF #050A14;
+  scrollbar-color: #059669 #F8FAFC;
 }
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: #050A14;
-  color: #e2e8f0;
+  background-color: #F8FAFC;
+  color: #1E293B;
   overflow-x: hidden;
 }
 
 /* ── Reveal animation ── */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ── Gradient text utility ── */
-.gradient-text {
-  background: linear-gradient(135deg, #0066FF, #00D4FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* ── Accent text utility ── */
+.accent-text {
+  color: #059669;
 }
 
-/* ── Gradient border utility ── */
-.gradient-border {
-  position: relative;
+/* ── Card subtle shadow (no solid borders) ── */
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, #0066FF, #00D4FF);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* ── Grid background for Hero ── */
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 64px 64px;
-}
-
-/* ── Orb glow decorations ── */
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  z-index: 0;
-}
-.orb-blue {
-  background: radial-gradient(circle, rgba(0, 102, 255, 0.15), transparent 70%);
-}
-.orb-cyan {
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.12), transparent 70%);
-}
-
-/* ── Card hover glow ── */
-.card-glow {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-.card-glow:hover {
-  background-color: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 0 40px rgba(0, 102, 255, 0.08), 0 0 80px rgba(0, 212, 255, 0.04);
+.card-shadow:hover {
+  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.08), 0 4px 10px -3px rgb(0 0 0 / 0.04);
   transform: translateY(-2px);
 }
 
 /* ── Pulse animation ── */
 @keyframes pulse-slow {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  50% { opacity: 0.6; }
 }
 .animate-pulse-slow {
   animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;

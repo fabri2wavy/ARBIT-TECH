@@ -19,15 +19,15 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'py-3 bg-[#050A14]/95 backdrop-blur-md border-b border-white/[0.06]'
+          ? 'py-3 bg-white/95 backdrop-blur-md shadow-[0_1px_3px_rgb(0_0_0/0.06)]'
           : 'py-6 bg-transparent'
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-1 text-xl font-bold tracking-tight">
-          <span className="text-white">Arbit</span>
-          <span className="text-[#00D4FF]">Tech</span>
+          <span className="text-[#1E293B]">Arbit</span>
+          <span className="text-[#059669]">Tech</span>
         </a>
 
         {/* Desktop links */}
@@ -36,7 +36,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-white/60 font-medium hover:text-white transition-colors duration-300"
+              className="text-sm text-[#64748B] font-medium hover:text-[#1E293B] transition-colors duration-300"
             >
               {link.label}
             </a>
@@ -49,7 +49,7 @@ export default function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
+          className="md:hidden p-2 text-[#64748B] hover:text-[#1E293B] transition-colors"
           aria-label="Toggle menu"
         >
           <div className="relative w-6 h-6">
@@ -69,17 +69,17 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 ease-out ${
+        className={`md:hidden overflow-hidden transition-all duration-500 ease-out bg-white ${
           mobileOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="mx-auto max-w-7xl px-6 pt-4 pb-6 flex flex-col gap-4 border-t border-white/[0.06]">
+        <div className="mx-auto max-w-7xl px-6 pt-4 pb-6 flex flex-col gap-4">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-sm text-white/60 font-medium hover:text-white transition-colors py-1"
+              className="text-sm text-[#64748B] font-medium hover:text-[#1E293B] transition-colors py-1"
             >
               {link.label}
             </a>

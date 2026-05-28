@@ -9,7 +9,6 @@ export const services = [
     description:
       'Creamos experiencias web de alto rendimiento que convierten visitantes en clientes. Sitios optimizados para SEO, velocidad y diseño visual impactante.',
     tags: ['React', 'Next.js', 'Tailwind', 'SEO'],
-    gradient: 'from-blue-500 to-cyan-400',
   },
   {
     id: 'crm',
@@ -18,7 +17,6 @@ export const services = [
     description:
       'Diseñamos plataformas de gestión que centralizan tu operación. Dashboards intuitivos, reportes en tiempo real y automatización de procesos clave.',
     tags: ['CRM', 'ERP', 'Dashboard', 'Analytics'],
-    gradient: 'from-violet-500 to-blue-500',
   },
   {
     id: 'mobile',
@@ -27,6 +25,5 @@ export const services = [
     description:
       'Desarrollamos aplicaciones móviles nativas y cross-platform con integración directa a APIs bancarias, pasarelas de pago y servicios en la nube.',
     tags: ['React Native', 'APIs', 'Fintech', 'Sandbox'],
-    gradient: 'from-cyan-400 to-emerald-400',
   },
 ]

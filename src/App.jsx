@@ -10,7 +10,7 @@ import SectionDivider from './components/layout/SectionDivider'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#050A14] text-white overflow-hidden">
+    <div className="min-h-screen bg-slate-50 text-slate-800 overflow-hidden">
       <Navbar />
       <main>
         <Hero />

@@ -2,7 +2,7 @@
 export default function Tag({ children, className = '' }) {
   return (
     <span
-      className={`inline-block rounded-md bg-white/[0.06] px-2.5 py-1 text-[11px] font-medium text-white/50 tracking-wide ${className}`}
+      className={`inline-block rounded-md bg-[#F1F5F9] px-2.5 py-1 text-[11px] font-medium text-[#64748B] tracking-wide ${className}`}
     >
       {children}
     </span>
